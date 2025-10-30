@@ -1,13 +1,27 @@
-version: "3.8"
 services:
-  db:
-    image: postgres
-    container_name: my_postgres
+  worker:
+    build: .
+    container_name: cf_worker_env
+    working_dir: /app
+    volumes:
+      - ./:/app
+    tty: true
+    environment: 
+      NODE_ENV: development
+      PGHOST: postgres
+      PGUSER: postgres_user
+      PGPASSWORD: pw111223#
+      PGDATABASE: appdb
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:16
+    container_name: cf_postgres
     restart: always
     environment:
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
-      POSTGRES_DB: mydatabase
+      POSTGRES_USER: postgres_user
+      POSTGRES_PASSWORD: pw111223#
+      POSTGRES_DB: appdb
     ports:
       - "5432:5432"
     volumes:

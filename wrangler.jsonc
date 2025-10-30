@@ -14,17 +14,13 @@
 		"binding": "ASSETS",
 		"not_found_handling": "single-page-application"
 	},
-	// Hyperdrive binding is optional - if not provided, app will use mock data
-	// To enable Hyperdrive, uncomment and configure properly:
-	/*
-    "hyperdrive": [
-      {
-        "binding": "HYPERDRIVE",
-        "id": "YOUR_HYPERDRIVE_ID",
-        "localConnectionString": "postgresql://myuser:mypassword@localhost:5432/mydatabase"
-      }
-    ],
-    */
+	"hyperdrive": [
+		{
+			"binding": "HYPERDRIVE",
+			"id": "f54693b0b4904d59a760894bacaa76ba",
+			"localConnectionString": "postgresql://neondb_owner:npg_fjgG0w2rUDnY@ep-holy-tree-a1npq7yh-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+		}
+	],
 	"placement": {
 		"mode": "smart"
 	},
